@@ -24,18 +24,23 @@
             <!-- TODO: Skriv ingressen från innehall.md -->
             <h3>
                 Fyll i formuläret så bekräftar vi din bokning inom ett dygn.
-                Fält markerade med * är obligatoriska.
             </h3>
+            <h3>Fält markerade med * är obligatoriska.</h3>
 
             <form action="#" method="post">
                 <div class="falt">
-                    <label for="Namn">Namn *</label>
+                    <label for="Namn">
+                        Namn
+                        <span aria-hidden="true">*</span>
+                    </label>
+                    <!-- <label for="Namn">Namn *</label>-->
+
                     <input
                         type="text"
                         id="Namn"
                         name="Namn"
                         required
-                        autocomplete="Namn"
+                        autocomplete="name"
                         placeholder="För och efternamn"
                     />
                 </div>
@@ -44,19 +49,19 @@
                     <label for="E-post">E-postadress *</label>
                     <input
                         type="email"
-                        id="E-post"
-                        name="E-post"
+                        id="E-postadress"
+                        name="E-postadress"
+                        autocomplete="email"
                         aria-describedby="epost-hjalp"
                         required
                     />
                 </div>
 
-                <!--   aria-describedby="epost-hjalp"    -->
-
                 <p id="epost-hjalp">Vi mejlar din bekräftlese nu</p>
 
                 <div class="falt">
                     <label for="Telefon">Telefon (valfritt)</label>
+                    <!-- prettier-ignore -->
                     <input
                         type="tel"
                         id="Telefon"
@@ -86,25 +91,30 @@
                 <div class="falt">
                     <fieldset>
                         <legend>Kostönskemål</legend>
-
+                        <!-- Legend = Rubrik   name ska vara samma -->
                         <input
                             type="checkbox"
                             id="Vegetarisk"
                             value="Vegetarisk"
-                            name="Vegetarisk"
+                            name="Kost"
                         />
+                        <label for="Vegetarisk">Vegetarisk</label>
+
                         <input
                             type="checkbox"
                             id="Vegansk"
                             value="Vegansk"
-                            name="Vegansk"
+                            name="Kost"
                         />
+                        <label for="Vegansk">Vegansk</label>
+
                         <input
                             type="checkbox"
                             id="Glutenfri"
                             value="Glutenfri"
-                            name="Glutenfri"
+                            name="Kost"
                         />
+                        <label for="Glutenfri">Glutenfri</label>
                     </fieldset>
                 </div>
 
@@ -118,12 +128,12 @@
                             name="Svar"
                         />
                         <label for="E-post">E-post</label>
+
                         <input type="radio" id="SMS" value="SMS" name="Svar" />
                         <label for="SMS">SMS</label>
                     </fieldset>
                 </div>
 
-                | Önskemål | Övriga önskemål | textarea | nej |
                 <div class="falt">
                     <label for="Önskemal">Övriga önskemål</label>
                     <textarea id="Önskemal" name="Önskemal" rows="4"></textarea>
@@ -144,9 +154,8 @@
                         />
                     </fieldset>
                 </div>
-                <div class="falt">
-                    <button type="submit"></button>
-                </div>
+
+                <button type="submit"></button>
             </form>
         </main>
 
